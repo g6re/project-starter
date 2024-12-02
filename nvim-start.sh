@@ -15,10 +15,10 @@ if [ $? != 0 ]; then
     tmux send-keys -t $SESSION_NAME:1 "cd $BACKEND_DIR && npm start" C-m
 
     tmux new-window -t $SESSION_NAME -n nvim-frontend
-    tmux send-keys -t $SESSION_NAME:2 "cd $FRONTEND_DIR && nvim" C-m
+    tmux send-keys -t $SESSION_NAME:2 "cd $FRONTEND_DIR && nvim ." C-m
 
     tmux new-window -t $SESSION_NAME -n nvim-backend
-    tmux send-keys -t $SESSION_NAME:3 "cd $BACKEND_DIR && nvim" C-m
+    tmux send-keys -t $SESSION_NAME:3 "cd $BACKEND_DIR && nvim ." C-m
 fi
 
 tmux attach-session -t $SESSION_NAME
